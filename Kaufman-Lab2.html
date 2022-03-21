@@ -1,13 +1,31 @@
 Ryan Kaufman - IT2320 - Lab2
-const number = parseInt(promt( "Enter number: "));
-let n1 = 0, n2= 1, nextNumber;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Fibonacci Sequence</title>
+   <script>
+       "use strict"
+	   while (true) {
+		   var numFib = prompt("How many numbers in the sequence?");
+		   numFib = parseFloat(numFib);
+		   if (numFib >= 3) break;
+           alert("The sequence must have 3 or more numbers.");
+	   }
 
-console.log("Fibonacci Series Number: ");
+	   var i;
 
-for (let i = 1; i <= number; i++)
-{
-console.log(n1);
-nextNumber = n1 + n2;
-n1 = n2;
-n2 = nextNumber;
-                   
+	   var myFib = []; 
+	   myFib[0] = 0;
+	   myFib[1] = 1;
+
+	   for(i = 2; i < numFib; i++)
+	       myFib.push(myFib[i - 1] + myFib[i - 2]);
+
+	   for(i = 0; i < numFib; i++)
+		   document.write(myFib[i] + "<br/>");
+
+       var ratio = (myFib[numFib - 1] / myFib[numFib - 2]);
+       document.write("Ratio: " + ratio);
+	</script>
+</head>
+<body>
