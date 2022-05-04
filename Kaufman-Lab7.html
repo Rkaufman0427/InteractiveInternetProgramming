@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Walking guy</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+
+        .img {
+            width: 400px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            display: none;
+        }
+    </style>    
+
+    <script>
+
+        $(document).ready(function () {
+            var img = $('#walking_guy');
+            $("#start").click(function () {
+                img.fadeIn(4000, function () {
+
+                    img.animate({
+                        left: $(window).width() - 600
+                    }, 4000, function () {
+                       img.animate({
+                            left: '0px'
+                        }, 3000, function () {
+                            img.fadeOut(1000);
+                            $("#walking_guy").css({
+                            '-webkit-transform': 'scaleX(-1)',
+                            'transform': 'scaleX(-1)'
+                        });
+                        });
+                    });
+                });
+            });
+        });
+        
+    </script>
+</head>
+
+<body>
+    
+    <h2>Ryan Kaufman - IT 2320 - Lab 7 Walking Guy</h2>
+    <button id="start">Start</button>
+    <image class="img" id="walking_guy" src="guy-walking.gif"></image>
+
+</body>
+</html>
